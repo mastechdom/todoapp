@@ -21,6 +21,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/vue-fontawesome": "^2.0.2",
+    "jw-vue-pagination": "^1.0.3",
     "latest": "^0.2.0",
     "n": "^7.4.1",
     "stable": "^0.1.8",

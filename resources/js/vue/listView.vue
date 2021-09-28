@@ -1,11 +1,15 @@
 <template>
     <div>
-        <div :key="item.id" v-for="item in items">
+        <div :key="item.id" v-for="item in items1">
             <list-item 
                 :item="item" 
                 class="item"
                 v-on:itemChange="$emit('reloadlist')"
             />
+
+        </div>
+        <div class="card-footer pb-0 pt-3">
+            <jw-pagination :pageSize=5 :items="exampleItems" @changePage="onChangePage"></jw-pagination>
         </div>
     </div>
 </template>
@@ -14,10 +18,24 @@
 import listItem from "./listItem.vue"
 
 export default {
-    props: ['items'],
+    props: ['items1'],
     components: {
         listItem,
     },
+    data() {
+        return {
+           
+           exampleItems: this.items1.map(function(ele){ return { name:ele.name,id:ele.id}}),
+           pageOfItems: []
+        };
+    },
+    methods: {
+        onChangePage(pageOfItems) {
+            //console.log(pageOfItems)
+            // update page of items
+            this.pageOfItems = pageOfItems;
+        }
+    }
 }
 </script>
 

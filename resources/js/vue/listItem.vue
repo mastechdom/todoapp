@@ -9,6 +9,11 @@
         <button @click="removeItem()" class="trashcan" >
             <font-awesome-icon icon="trash" />
         </button>
+        <font-awesome-icon
+            icon="user-edit"
+            @click="addItem()"
+            :class="[ item.name ? 'active' : 'inactive']" 
+        />
     </div>
 </template>
 

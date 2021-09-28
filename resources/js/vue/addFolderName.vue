@@ -1,5 +1,5 @@
 <template>
-    <div class="addItem">
+    <div class="addFolder">
         <input type="text" v-model="item.name" />
         <font-awesome-icon
             icon="plus-square"
@@ -28,7 +28,7 @@ export default {
                 return;
             }
 
-            axios.post('http://127.0.0.1:8000/api/items/store', {
+            axios.post('http://127.0.0.1:8000/api/folder_names/store', {
                 item: this.item
             })
             .then ( response => {
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style scoped>
-.addItem {
+.addFolder {
     display: flex;
     justify-content: center;
     align-items: center;
